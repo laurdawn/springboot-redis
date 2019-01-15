@@ -1,0 +1,18 @@
+spring:
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 1000
+
+logging:
+  config: classpath:log4j2-dev.yml
+
+server:
+  port: 8081

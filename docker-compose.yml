@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  app:
+    image: java:8-alpine
+    restart: always
+    ports:
+      - 8081:8081
+    working_dir: /usr/src/myapp
+    volumes:
+      - /dk_compose/jenkins/home/workspace/springboot_base/target/springboot_base.jar:/usr/src/myapp/springboot_base.jar
+    command: java -jar springboot_base.jar
+    networks:
+      - mariadb
+networks:
+  mariadb:
+    external: true
